@@ -1,1 +1,1 @@
-# npmregistry
+# npmsearch
