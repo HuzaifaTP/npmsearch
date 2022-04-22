@@ -1,6 +1,8 @@
 import React, {useRef} from "react";
-import {OnSearchProps} from '../../models'
 
+export interface OnSearchProps {
+    onSearch: (searchText:string) => void;
+}
 
 const SearchInput: React.FC<OnSearchProps> = props => {
 const textInputRef = useRef<HTMLInputElement>(null);
