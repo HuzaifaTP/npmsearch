@@ -24,8 +24,8 @@ const SearchInput: React.FC<OnSearchProps> = (props) => {
   return (
     <form className="container-searchInput" onSubmit={onSearchHandler}>
       <h4 className="underline text-3xl font-normal leading-normal mt-0 mb-2 text-black-800">
-  Npm Registry Search
-</h4>
+        Npm Registry Search
+      </h4>
       <div className="input-text">
         <div className="flex justify-center">
           <div className="search-input">
@@ -85,22 +85,7 @@ const SearchInput: React.FC<OnSearchProps> = (props) => {
             </div>
           </div>
         </div>
-
-        {/* <select
-            className="select-input"
-            value={props.optionInput}
-            onChange={onOptionChangeHandler}
-          >
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="150">150</option>
-            <option value="200">200</option>
-            <option value="250">250</option>
-          </select> */}
       </div>
-
-      {/* <input type="text" id="search-text" ref={textInputRef}/>
-      <button type="submit">Search</button> */}
     </form>
   );
 };
