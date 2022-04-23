@@ -10,7 +10,7 @@ A simple web application to search for npm package information, specifically nam
 4. As a user, I am able to select the number of elements(rows) to display on each page.
 5. As a user, I am able to toggle between pages.
 
-## TECHNOLOGY STACKFrontend
+## TECHNOLOGY STACK
 - React: Framework used to craft user interface
 - TypeScript: Programming language used in React to develope user interface
 - Axios: To handle communication between front-end and server
