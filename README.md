@@ -23,7 +23,7 @@ A simple web application to search for npm package information, specifically nam
 - End-point: https://registry.npmjs.org/-/v1/search?text=${searchInput}&size=${optionInput}
     - GET response: npm packages data that correspond to search input("searchInput") and number of packages to display("optionInput") parameters by user
 
-## INSTRUCTIONS 
+## STARTUP INSTRUCTIONS 
 Run the following commands in the sequence provided:
 1. npm install: To install all the project dependencies 
 2. npm start: To start the project on a local server (http://localhost:3000/)
