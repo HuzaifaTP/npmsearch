@@ -11,12 +11,17 @@ A simple web application to search for npm package information, specifically nam
 5. As a user, I am able to toggle between pages.
 
 ## TECHNOLOGY STACK
+### 1. Frontend
 - React: Framework used to craft user interface
 - TypeScript: Programming language used in React to develope user interface
 - Axios: To handle communication between front-end and server
 - External Libraries used:
   - MUI: A react UI library used for data grid construction using DataGrid component with pagination property
   - TailwindCSS: For certain stylistic interfaces 
+### 2. Backend
+- Back-end: npm Public Registry API
+- End-point: https://registry.npmjs.org/-/v1/search?text=${searchInput}&size=${optionInput}
+    - GET response: npm packages data that correspond to search input("searchInput") and number of packages to display("optionInput") parameters by user
 
 ## INSTRUCTIONS 
 Run the following commands in the sequence provided:
