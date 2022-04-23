@@ -1,8 +1,32 @@
 import React from "react";
 import { GridElements } from "../../Main";
 import { v4 as uuidv4 } from "uuid";
-import {DataGrid,GridToolbar,GridColDef,GridValueGetterParams} from "@mui/x-data-grid";
-import useStyles from "./DataGridStyling"
+import {DataGrid,GridToolbar,GridColDef,GridValueGetterParams,
+  gridPageCountSelector,
+  gridPageSelector,
+  useGridApiContext,
+  useGridSelector,
+
+} from "@mui/x-data-grid";
+import LinearProgress from '@mui/material/LinearProgress';
+
+
+// import Pagination from '@mui/material/Pagination';
+
+// function CustomPagination() {
+//   const apiRef = useGridApiContext();
+//   const page = useGridSelector(apiRef, gridPageSelector);
+//   const pageCount = useGridSelector(apiRef, gridPageCountSelector);
+
+//   return (
+//     <Pagination
+//       color="primary"
+//       count={pageCount}
+//       page={page + 1}
+//       onChange={(event, value) => apiRef.current.setPage(value - 1)}
+//     />
+//   );
+// }
 
 
 const GridItems: React.FC<GridElements> = (props) => {
@@ -32,12 +56,15 @@ const GridItems: React.FC<GridElements> = (props) => {
       <DataGrid
         rows={rows}
         columns={columns}
-        className={useStyles().root}
-        components={{Toolbar: GridToolbar}}
+        components={{Toolbar: GridToolbar,LoadingOverlay: LinearProgress}}
+        // loading
         pageSize={pageSize}
-        rowsPerPageOptions={[10,20,30]}
+        rowsPerPageOptions={[10,20,30,40,50]}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         disableSelectionOnClick
+        // components={{
+        //   Pagination: CustomPagination,Toolbar: GridToolbar
+        // }}
         // autoPageSize={true}
         getRowId={uuidv4}
         sx={{
