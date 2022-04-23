@@ -15,7 +15,7 @@ A simple web application to search for npm package information, specifically nam
 - TypeScript: Programming language used in React to develope user interface
 - Axios: To handle communication between front-end and server
 - External Libraries used:
-  - MUI: A react UI library used for data grid construction using <DataGrid> component with pagination property
+  - MUI: A react UI library used for data grid construction using DataGrid component with pagination property
   - TailwindCSS: For certain stylistic interfaces 
 
 ## INSTRUCTIONS 
