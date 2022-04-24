@@ -5,6 +5,12 @@ import SearchInput from "./components/searchInput";
 import { API_fetchPackage } from "./api";
 import "./Main.css";
 
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
 
 export interface GridElements {
   items: any[];
@@ -16,9 +22,13 @@ const Main: React.FC = () => {
   const [optionInput, setOptionInput] = useState("50");
   const [gridElements, setGridElements] = useState<GridElements[]>([]);
   const [loading, setloading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [click, setClick] = useState(false);
 
   useEffect(() => {
     fetchGridElements();
+    setloading(true);
+    setClick(true);
   }, [searchInput, optionInput]);
 
   // Usually, data focused code will be separated from presentational (pure) component.
@@ -30,18 +40,22 @@ const Main: React.FC = () => {
     const res = await API_fetchPackage.get(
       `/search?text=${searchInput}&size=${optionInput}`
     );
-    setGridElements(res.data.objects);
+    if (click === true && res.data.objects == "") {
+      console.log("Triggered");
+      setOpen(true);
+      setGridElements([]);
+    } else {
+      setGridElements(res.data.objects);
+    }
     setloading(false);
   };
 
   const onSearchHandler = (text: string) => {
     setSearchInput(text);
-    setloading(true);
   };
 
   const onOptionChangeHandler = (text: string) => {
     setOptionInput(text);
-    setloading(true);
   };
 
   return (
@@ -52,6 +66,32 @@ const Main: React.FC = () => {
         optionInput={optionInput}
       />
       <GridItems items={gridElements} loading={loading} />
+
+      <Dialog
+        open={open}
+        onClose={() => {
+          setOpen(false);
+        }}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"No results found"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Npm package with name "{searchInput}" does not exist.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={() => {
+              setOpen(false);
+            }}
+            autoFocus
+          >
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

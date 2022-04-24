@@ -45,7 +45,7 @@ const GridItems: React.FC<GridElements> = (props) => {
         pageSize={pageSize}
         rowsPerPageOptions={[10, 20, 30, 40, 50]}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-        disableSelectionOnClick
+        checkboxSelection
         getRowId={uuidv4}
         sx={{
           border: 2,

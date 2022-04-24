@@ -17,7 +17,6 @@ const SearchInput: React.FC<OnSearchProps> = (props) => {
   };
 
   const onOptionChangeHandler = (event: React.ChangeEvent<any>) => {
-    console.log("triggered");
     props.onSelect(event.target.value);
   };
 
