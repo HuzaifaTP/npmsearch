@@ -3,7 +3,7 @@
 ## 1. PREMISE
 A simple web application to search for npm package information, specifically name of the package, its author and the  last update date.
 
-### Wireframe with UI/UX considerations: https://miro.com/app/board/uXjVO69y8rQ=/?share_link_id=807059379844
+##### Wireframe with UI/UX considerations: https://miro.com/app/board/uXjVO69y8rQ=/?share_link_id=807059379844
 
 ## 2. USER STORIES
 1. As a user, I am able search the npm package name.
