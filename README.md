@@ -3,12 +3,15 @@
 ## 1. PREMISE
 A simple web application to search for npm package information, specifically name of the package, its author and the  last update date.
 
+### Wireframe with UI/UX considerations: https://miro.com/app/board/uXjVO69y8rQ=/?share_link_id=807059379844
+
 ## 2. USER STORIES
 1. As a user, I am able search the npm package name.
 2. As a user, I am able to filter the search results based on respective filter properties.
 3. As a user, I am able to select the total number of search results to be generated.
 4. As a user, I am able to select the number of elements(rows) to display on each page.
 5. As a user, I am able to toggle between pages.
+6. As a user, I am able to export either all or selected search results
 
 ## 3. TECHNOLOGY STACK
 ### Frontend
