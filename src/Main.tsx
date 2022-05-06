@@ -59,12 +59,16 @@ const Main: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container">'
+    {/* SearchInput(Action): Component that generates data
+        GridItems(presentational component): Component that needs the data
+    */}
       <SearchInput
         onSearch={onSearchHandler}
         onSelect={onOptionChangeHandler}
         optionInput={optionInput}
       />
+    
       <GridItems items={gridElements} loading={loading} />
 
       <Dialog

@@ -8,16 +8,17 @@ export interface OnSearchProps {
 }
 
 const SearchInput: React.FC<OnSearchProps> = (props) => {
-  const textInputRef = useRef<HTMLInputElement>(null);
+
+  const textInputRef = useRef<HTMLInputElement>(null); //Accessing input by directly accessing the DOM
 
   const onSearchHandler = (event: React.FormEvent) => {
-    event.preventDefault();
+    event.preventDefault(); 
     const enteredText = textInputRef.current!.value;
-    props.onSearch(enteredText);
+    props.onSearch(enteredText); //Child => Parent communication
   };
 
   const onOptionChangeHandler = (event: React.ChangeEvent<any>) => {
-    props.onSelect(event.target.value);
+    props.onSelect(event.target.value); //Child => Parent communication
   };
 
   return (
@@ -32,7 +33,7 @@ const SearchInput: React.FC<OnSearchProps> = (props) => {
               <div className="input-group relative flex items-stretch space-x-2 w-full mb-6">
                 <input
                   type="search"
-                  ref={textInputRef}
+                  ref={textInputRef} //Connect HTML elements to references
                   className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Search"
                   aria-label="Search"

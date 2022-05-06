@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { GridElements } from "../../Main";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -10,7 +10,7 @@ import {
 import LinearProgress from "@mui/material/LinearProgress";
 
 const GridItems: React.FC<GridElements> = (props) => {
-  const [pageSize, setPageSize] = React.useState<number>(10);
+  const [pageSize, setPageSize] = useState<number>(10);
 
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", flex: 1 },
