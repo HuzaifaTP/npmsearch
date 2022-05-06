@@ -28,9 +28,8 @@ A simple web application to search for npm package information, specifically nam
 
 ## 4. STARTUP INSTRUCTIONS 
 Run the following commands in the sequence provided:
-1. Unzip the file
-2. Run "npm install" inside the terminal to install all the project dependencies 
-3. Run "npm start" to start the project on a local server (http://localhost:3000/)
+1. Run "npm install" inside the terminal to install all the project dependencies 
+2. Run "npm start" to start the project on a local server (http://localhost:3000/)
 
 
 
